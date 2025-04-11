@@ -18,6 +18,7 @@ const buttonLayout = [
 export default function App() {
   return (
     <View style={styles.buttonContainer}>
+      <Display input={"3+7"} output={"= 10"} />
       {buttonLayout.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
           {row.map((btn, index) => {
