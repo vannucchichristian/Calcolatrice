@@ -1,26 +1,32 @@
 import { StyleSheet } from 'react-native';
 
 // Costanti per i colori
-const bgColor = "#222";
-const buttonBgColor = "#333";
+const bgColors = {
+    background: "#222",
+    classic: "#333",
+    equals: "#008fff",
+};
 const textColors = {
     classic: "#fff",
     output: "#aaa",
+    operators: "#008fff",
+    clear: "#ff2c2c",
+    memory: "#32cd32",
 };
 
 const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,
-        backgroundColor: bgColor,
+        backgroundColor: bgColors["background"],
         justifyContent: 'flex-end',
     },
     row: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      marginVertical: 5,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginVertical: 5,
     },
     button: {
-        backgroundColor: buttonBgColor,
+        backgroundColor: bgColors["classic"],
         flex: 1,
         margin: 5,
         height: 70,
@@ -28,12 +34,25 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    buttonText: {
-      color: textColors["classic"],
-      fontSize: 28,
+    equalsBackground: {
+        backgroundColor: bgColors["equals"],
     },
-    buttonEmpty: {
-      flex: 1,
+    buttonText: {
+        color: textColors["classic"],
+        fontSize: 28,
+    },
+    operatorText: {
+        color: textColors["operators"],
+    },
+    clearText: {
+        color: textColors["clear"],
+    },
+    memoryText: {
+        color: textColors["memory"],
+    },
+    noButton: {
+        flex: 1,
+        height: 70,
     },
     inputText: {
         color: textColors["classic"],
