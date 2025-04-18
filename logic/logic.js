@@ -21,7 +21,13 @@ export default function handleInput(label, input, output, setInput, setOutput) {
             break;
         }
         case '.': {
-            // Coming soon...
+            if (input === '' || ['+', '‒', '×', '÷'].includes(input.at(-1))) {
+                newInput += '0';  // Aggiunge uno 0 prima del punto all'inizio della stringa o se il carattere precedente è un operatore
+            }
+            // Cerca un punto all'interno dell'ultimo numero
+            if (!(findLastNumber(input).includes('.'))) {
+                newInput += label;  // Lo inserisce se non c'era già
+            }
             break;
         }
         case '=': {
@@ -48,4 +54,8 @@ export default function handleInput(label, input, output, setInput, setOutput) {
     }
     setInput(newInput);
     setOutput(newOutput);
+}
+
+function findLastNumber(input) {
+    return input.split(/[+‒×÷]/).at(-1);  // Restituisce la parte di stringa successiva all'ultimo operatore
 }
