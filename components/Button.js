@@ -10,6 +10,7 @@ export default function Button({ label, onClick }) {
 
     return (
         <TouchableOpacity
+            onPress={onClick}
             style={[
                 styles.button,
                 isEquals && styles.equalsBackground,
