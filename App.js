@@ -21,12 +21,12 @@ export default function App() {
 
     return (
         <View style={styles.buttonContainer}>
-            <Display input={input} output={output} />
+            <Display input={input} output={output} memory={memory} />
             {buttonLayout.map((row, rowIndex) => (
                 <View key={rowIndex} style={styles.row}>
                     {row.map((btn, index) => {
                         if (!btn) return (<View key={index} style={styles.noButton} />);
-                        const onClick = () => handleInput(btn, input, output, setInput, setOutput);  // Funzione lambda che evita il passaggio dei parametri a Button.js
+                        const onClick = () => handleInput(btn, input, output, memory, setInput, setOutput, setMemory);  // Funzione lambda che evita il passaggio dei parametri a Button.js
                         return (
                             <Button
                                 key={index}

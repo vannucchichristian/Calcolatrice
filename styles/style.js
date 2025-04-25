@@ -15,6 +15,7 @@ const textColors = {
 };
 
 const styles = StyleSheet.create({
+    // Layout flexbox per i pulsanti
     buttonContainer: {
         flex: 1,
         backgroundColor: bgColors["background"],
@@ -25,6 +26,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginVertical: 5,
     },
+
+    // Stile dei pulsanti
     button: {
         backgroundColor: bgColors["classic"],
         flex: 1,
@@ -54,6 +57,12 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 70,
     },
+
+    // Stile del display
+    display: {
+        padding: 20,
+        alignItems: 'flex-end',
+    },
     inputText: {
         color: textColors["classic"],
         fontSize: 45,
@@ -63,10 +72,15 @@ const styles = StyleSheet.create({
         fontSize: 28,
         marginTop: 5,
     },
-    display: {
-        padding: 20,
-        alignItems: 'flex-end',
-    }
+    memoryContainer: {
+        position: 'absolute',
+        top: -20,
+        left: 20,
+    },
+    memoryLabel: {
+        fontSize: 16,
+        color: textColors["memory"],
+    },
 });
 
 export default styles;

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import styles from '../styles/style';
 
-export default function Display({ input, output }) {
+export default function Display({ input, output, memory }) {
     const inputScrollRef = useRef(null);  // Gestisce lo scorrimento automatico dell'area di input
 
     useEffect(() => {
@@ -13,8 +13,11 @@ export default function Display({ input, output }) {
 
     return (
         <View style={styles.display}>
+            <View style={styles.memoryContainer}>
+                <Text style={styles.memoryLabel}>M = {memory}</Text>
+            </View>
             <View>
-                {/* Visualizza i testi in un'area "scrollabile" */}
+                {/* Visualizza l'input in un'area "scrollabile" */}
                 <ScrollView
                     ref={inputScrollRef}
                     style={{
@@ -30,17 +33,13 @@ export default function Display({ input, output }) {
                     >{input}
                     </Text>
                 </ScrollView>
-                <ScrollView
-                    style={{ maxHeight: 60 }}
-                    contentContainerStyle={{ paddingVertical: 4 }}
-                ><Text
-                        style={[
-                            styles.outputText,
-                            { textAlign: 'right' },
-                        ]}
-                    >{output}
-                    </Text>
-                </ScrollView>
+                <Text
+                    style={[
+                        styles.outputText,
+                        { textAlign: 'right' },
+                    ]}
+                >{output}
+                </Text>
             </View>
         </View>
     );
