@@ -61,7 +61,9 @@ export default function handleInput(label, input, output, memory, setInput, setO
             } else if (memory >= 0) {
                 newInput = input.slice(0, input.length - findLastNumber(input).length);  // Elimina l'ultimo numero dall'input attuale
             }
-            newInput += memory.replace(/-/g, '‒');
+            if (memory != 0) {
+                newInput += memory.replace(/-/g, '‒');
+            }
             break;
         }
         case 'MC': {
